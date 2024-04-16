@@ -45,6 +45,10 @@ npx tsc --init
 On tsconfig.json file, change the following properties:
 
 ```json
+"baseUrl": "./src",
+"paths": {
+      "@/*": ["*"]
+},
 "incremental": true
 "outDir": "./dist"
 ```
@@ -68,4 +72,12 @@ npm install tslint --save-dev
 
 ```bash
 npx tslint --init
+```
+
+## Compilation
+
+To compile the project, run the following command:
+
+```bash
+npx tsc
 ```
