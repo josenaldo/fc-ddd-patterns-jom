@@ -2,7 +2,7 @@
 
 ## Repository creation steps
 
-1.Create project folder
+### Create project folder
 
 ```bash
 mkdir fc-ddd-patterns-jom
@@ -10,19 +10,19 @@ mkdir fc-ddd-patterns-jom
 code fc-ddd-patterns-jom
 ```
 
-2.Install typescript
+### Install typescript
 
 ```bash
 npm install typescript --save-dev
 ```
 
-3.Add gitignore file
+### Add gitignore file
 
 ```bash
 npx gitignore node
 ```
 
-4.Add LICENSE file
+### Add LICENSE file
 
 ```bash
 npx license
@@ -30,13 +30,13 @@ npx license
 
 Then, select the license type.
 
-5.Add README.md file
+### Add README.md file
 
 ```bash
 touch README.md
 ```
 
-6.Init typescript project
+### Init typescript project
 
 ```bash
 npx tsc --init
@@ -62,16 +62,29 @@ And add the following properties:
 
 Add the `src` folder and create the `index.ts` file.
 
-7.Install tslint
+### Install tslint
 
 ```bash
 npm install tslint --save-dev
 ```
 
-8.Init tslint
+### Init tslint
 
 ```bash
 npx tslint --init
+```
+
+### Install jest and SWC
+
+```bash
+npm install jest @types/jest ts-jest --save-dev
+npm install @swc/jest @swc/cli @swc/core --save-dev
+```
+
+### Init jest
+
+```bash
+npx jest --init
 ```
 
 ## Compilation
