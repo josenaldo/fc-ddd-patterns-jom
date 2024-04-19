@@ -29,5 +29,9 @@ class Customer {
     deactivate() {
         this._active = false;
     }
+    set Address(address) {
+        this._address = address;
+    }
 }
+exports.default = Customer;
 let customer = new Customer("123", "");

@@ -1,6 +1,6 @@
 import  Address  from '@/entity/address';
 
-class Customer {
+export default class Customer {
 
   _id: string;
   _name: string = '';
