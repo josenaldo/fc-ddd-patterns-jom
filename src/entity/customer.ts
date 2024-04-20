@@ -2,10 +2,10 @@ import  Address  from '@/entity/address';
 
 export default class Customer {
 
-  _id: string;
-  _name: string = '';
-  _address!: Address;
-  _active: boolean = false;
+  private _id: string;
+  private _name: string = '';
+  private _address!: Address;
+  private _active: boolean = false;
 
   constructor(id: string, name: string) {
     this._id = id;
@@ -43,5 +43,3 @@ export default class Customer {
     this._address = address;
   }
 }
-
-let customer = new Customer("123", "")
