@@ -60,4 +60,50 @@ describe('Customer unit testes', () => {
     customer.deactivate()
     expect(customer.isActive()).toBe(false)
   })
+
+  it('should start with zero reward points', () => {
+    const customer = new Customer('1', 'John Doe')
+    expect(customer.rewardPoints).toBe(0)
+  })
+
+  it('should add reward points', () => {
+    const customer = new Customer('1', 'John Doe')
+    customer.addRewardPoints(10)
+    expect(customer.rewardPoints).toBe(10)
+  })
+
+  it('should add reward points twice', () => {
+    const customer = new Customer('1', 'John Doe')
+    customer.addRewardPoints(10)
+    customer.addRewardPoints(20)
+    expect(customer.rewardPoints).toBe(30)
+  })
+
+  it('should throw an error when add negative reward points', () => {
+    const customer = new Customer('1', 'John Doe')
+    expect(() => {
+      customer.addRewardPoints(-10)
+    }).toThrow('Reward points must be a positive number')
+  })
+
+  it('should throw an error when add zero reward points', () => {
+    const customer = new Customer('1', 'John Doe')
+    expect(() => {
+      customer.addRewardPoints(0)
+    }).toThrow('Reward points must be a positive number')
+  })
+
+  it('should throw an error when add non finite reward points', () => {
+    const customer = new Customer('1', 'John Doe')
+    expect(() => {
+      customer.addRewardPoints(Infinity)
+    }).toThrow('Reward points must be a positive number')
+  })
+
+  it('should throw an error when add not a number reward points', () => {
+    const customer = new Customer('1', 'John Doe')
+    expect(() => {
+      customer.addRewardPoints(NaN)
+    }).toThrow('Reward points must be a positive number')
+  })
 })

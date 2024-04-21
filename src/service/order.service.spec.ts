@@ -1,3 +1,4 @@
+import Customer from '@/entity/customer'
 import Order from '@/entity/order'
 import OrderItem from '@/entity/order_item'
 import OrderService from '@/service/order.service'
@@ -16,5 +17,26 @@ describe('Order Service unit tests', () => {
 
     // Assert - Then
     expect(total).toBe(500)
+  })
+
+  it('should place an order ', () => {
+    // Arrange - Given
+    const customer: Customer = new Customer('c123', 'John Doe')
+    const item1: OrderItem = new OrderItem('i1', 'p1', 'Item 1', 10, 1)
+
+    const order: Order = OrderService.placeOrder(customer, [item1])
+
+    expect(customer.rewardPoints).toBe(5)
+    expect(order.total).toBe(10)
+  })
+
+  it('should throw an erro when place a order with empty items', () => {
+    // Arrange - Given
+    const customer: Customer = new Customer('c123', 'John Doe')
+
+    // Act - When
+    expect(() => {
+      OrderService.placeOrder(customer, [])
+    }).toThrow('Order must have at least one item')
   })
 })
