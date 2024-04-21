@@ -116,3 +116,17 @@ To compile the project, run the following command:
 ```bash
 npx tsc
 ```
+
+## References
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/)
+- [TypeScript ESLint](https://typescript-eslint.io/)
+- [Prettier](https://prettier.io/)
+- [Jest](https://jestjs.io/)
+- [SWC](https://swc.rs/)
+- [Node.js](https://nodejs.org/)
+- [NPM](https://www.npmjs.com/)
+- [Git](https://git-scm.com/)
+-
+
