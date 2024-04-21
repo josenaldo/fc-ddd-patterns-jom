@@ -65,7 +65,7 @@ Add the `src` folder and create the `index.ts` file.
 ### Install tslint
 
 ```bash
-npm install tslint --save-dev
+npm install tslint tslint-config-prettier --save-dev
 ```
 
 ### Init tslint

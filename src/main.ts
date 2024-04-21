@@ -3,7 +3,7 @@ import Customer from '@/entity/customer';
 import Order from '@/entity/order';
 import OrderItem from '@/entity/order_item';
 
-let customer = new Customer("123", "John Doe");
+const customer = new Customer("123", "John Doe");
 const address = new Address("Main Street", "123", "12345-678", "São Paulo");
 customer.Address = address;
 customer.activate();

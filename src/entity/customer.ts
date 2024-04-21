@@ -1,4 +1,4 @@
-import  Address  from '@/entity/address';
+import Address from '@/entity/address';
 
 export default class Customer {
 
@@ -8,8 +8,8 @@ export default class Customer {
   private _active: boolean = false;
 
   constructor(id: string, name: string) {
-    this._id = id;
-    this._name = name;
+        this._id = id;
+    this._name =    name;
     this.validate();
   }
 
