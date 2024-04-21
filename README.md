@@ -125,6 +125,7 @@ npx tsc
 - [TypeScript ESLint](https://typescript-eslint.io/)
 - [Prettier](https://prettier.io/)
 - [Jest](https://jestjs.io/)
+  - [Jest Troubleshooting](https://github.com/jest-community/vscode-jest#troubleshooting)
 - [SWC](https://swc.rs/)
 - [Node.js](https://nodejs.org/)
 - [NPM](https://www.npmjs.com/)
