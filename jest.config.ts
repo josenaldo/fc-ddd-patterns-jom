@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
+import type { Config } from 'jest'
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -33,7 +33,7 @@ const config: Config = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
+  coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -156,10 +156,7 @@ const config: Config = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -177,7 +174,7 @@ const config: Config = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "\\.[tj]sx?$": "@swc/jest",
+    '\\.[tj]sx?$': '@swc/jest',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
@@ -197,6 +194,6 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
 
-export default config;
+export default config

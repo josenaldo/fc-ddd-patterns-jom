@@ -1,19 +1,19 @@
 export default class OrderItem {
   private _id: string
-  private _productid: string
+  private _productId: string
   private _name: string
   private _price: number
   private _quantity: number
 
   constructor(
     id: string,
-    productid: string,
+    productId: string,
     name: string,
     price: number,
     quantity: number
   ) {
     this._id = id
-    this._productid = productid
+    this._productId = productId
     this._name = name
     this._price = price
     this._quantity = quantity
@@ -25,7 +25,7 @@ export default class OrderItem {
       throw new Error('ID is required')
     }
 
-    if (!this._productid) {
+    if (!this._productId) {
       throw new Error('Product ID is required')
     }
 
