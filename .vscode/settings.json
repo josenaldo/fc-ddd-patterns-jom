@@ -22,6 +22,5 @@
     "titleBar.inactiveForeground": "#15202b99"
   },
   "peacock.remoteColor": "#61dafb",
-  "SnippetViewer.showType": "showAll",
-  "SnippetViewer.groupByType": "plugins"
+  "jest.jestCommandLine": "npm test"
 }
