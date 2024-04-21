@@ -7,6 +7,7 @@ describe('Order unit tests', () => {
     expect(() => {
       const order = new Order('', '123', []) //NOSONAR
     }).toThrow('ID is required')
+
   })
 
   it('should throw error when customerId is empty', () => {

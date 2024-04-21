@@ -50,7 +50,8 @@ On tsconfig.json file, change the following properties:
       "@/*": ["*"]
 },
 "incremental": true
-"outDir": "./dist"
+"outDir": "./dist",
+"target": "es2022"
 ```
 
 And add the following properties:
