@@ -62,16 +62,38 @@ And add the following properties:
 
 Add the `src` folder and create the `index.ts` file.
 
-### Install tslint
+### Install eslint and typescript-eslint
 
 ```bash
-npm install tslint tslint-config-prettier --save-dev
+
+npm install --save-dev eslint @eslint/js typescript typescript-eslint prettier eslint-config-prettier;
 ```
 
-### Init tslint
+### Init eslint
 
-```bash
-npx tslint --init
+Create a file named `eslint.config.js` and add the following content:
+
+```javascript
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
+);
+```
+
+If necessary, add the following properties to the `package.json` file:
+
+```json
+type: "module"
+```
+
+In the `package.json` file, add the following scripts:
+
+```json
+"lint": "eslint .",
+"lint:fix": "eslint . --fix"
 ```
 
 ### Install jest and SWC
