@@ -1,4 +1,5 @@
-/* eslint  @typescript-eslint/no-unused-vars: 0 */
+/* eslint @typescript-eslint/no-unused-vars: 0 */
+
 import Address from '@/entity/address'
 import Customer from '@/entity/customer'
 
