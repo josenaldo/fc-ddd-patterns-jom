@@ -1,4 +1,4 @@
-import OrderItem from '@/entity/order_item'
+import OrderItem from '@/domain/entity/order_item'
 
 export default class Order {
   private _id: string

@@ -1,6 +1,6 @@
 /* eslint @typescript-eslint/no-unused-vars: 0 */
 
-import Product from '@/entity/product'
+import Product from '@/domain/entity/product'
 
 describe('Product unit tests', () => {
   it('should throw an error when id is empty', () => {

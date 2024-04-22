@@ -1,6 +1,6 @@
 /* eslint @typescript-eslint/no-unused-vars: 0 */
-import Address from '@/entity/address'
-import Customer from '@/entity/customer'
+import Address from '@/domain/entity/address'
+import Customer from '@/domain/entity/customer'
 
 describe('Customer unit testes', () => {
   it('should throw error when id is empty', () => {

@@ -1,6 +1,6 @@
 /* eslint @typescript-eslint/no-unused-vars: 0 */
-import Order from '@/entity/order'
-import OrderItem from '@/entity/order_item'
+import Order from '@/domain/entity/order'
+import OrderItem from '@/domain/entity/order_item'
 
 describe('Order unit tests', () => {
   it('should throw erro when id is empty', () => {
