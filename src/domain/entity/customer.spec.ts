@@ -42,7 +42,7 @@ describe('Customer unit testes', () => {
       'Uberlândia'
     )
 
-    customer.Address = address
+    customer.changeAddress(address)
     customer.activate()
 
     expect(customer.isActive()).toBe(true)

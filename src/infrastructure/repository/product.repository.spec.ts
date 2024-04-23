@@ -3,7 +3,7 @@ import ProductModel from '@/infrastructure/db/sequelize/model/product.model'
 import ProductRepository from '@/infrastructure/repository/product.repository'
 import { Sequelize } from 'sequelize-typescript'
 
-describe('Product repository test', () => {
+describe('Product repository unit tests', () => {
   let sequelize: Sequelize
 
   beforeEach(async () => {

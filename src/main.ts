@@ -5,7 +5,7 @@ import OrderItem from '@/domain/entity/order_item'
 
 const customer = new Customer('123', 'John Doe')
 const address = new Address('Main Street', '123', '12345-678', 'São Paulo')
-customer.Address = address
+customer.changeAddress(address)
 customer.activate()
 
 const item1 = new OrderItem('1', '123', 'Item 1', 100, 10)
