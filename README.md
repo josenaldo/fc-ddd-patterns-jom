@@ -113,6 +113,26 @@ npm install @swc/jest @swc/cli @swc/core --save-dev
 npx jest --init
 ```
 
+### Configure SWC
+
+Create a file named `.swcrc` and add the following content:
+
+```json
+{
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "decorators": true
+    },
+    "transform": {
+      "legacyDecorator": true,
+      "decoratorMetadata": true
+    }
+  }
+}
+
+```
+
 ## Compilation
 
 To compile the project, run the following command:
