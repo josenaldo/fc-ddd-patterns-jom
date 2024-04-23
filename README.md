@@ -49,9 +49,12 @@ On tsconfig.json file, change the following properties:
 "paths": {
       "@/*": ["*"]
 },
-"incremental": true
+"experimentalDecorators": true,
+"emitDecoratorMetadata": true,
+"incremental": true,
+"strictNullChecks": false ,
 "outDir": "./dist",
-"target": "es2022"
+"target": "es2022",
 ```
 
 And add the following properties:
