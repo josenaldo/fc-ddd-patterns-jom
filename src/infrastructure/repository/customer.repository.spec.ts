@@ -103,9 +103,7 @@ describe('Customer repository unit tests', () => {
     const customerFound = await customerRepository.find('1')
 
     // Assert
-    expect(customerFound).not.toBeNull()
-    expect(customerFound.id).toBe('1')
-    expect(customerFound.name).toBe('Customer 1')
+    expect(customerFound).toStrictEqual(customer)
   })
 
   it('should throw an error when customer not found', async () => {
@@ -113,9 +111,9 @@ describe('Customer repository unit tests', () => {
     const customerRepository: CustomerRepository = new CustomerRepository()
 
     // Act & Assert
-    await expect(customerRepository.find('1')).rejects.toThrow(
-      'Customer not found'
-    )
+    expect(async () => {
+      await customerRepository.find('12345')
+    }).rejects.toThrow('Customer not found')
   })
 
   it('should find all customers', async () => {

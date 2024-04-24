@@ -12,10 +12,10 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
     await CustomerModel.create({
       id: customer.id,
       name: customer.name,
-      street: customer?.Address?.street,
-      number: customer?.Address?.number,
-      zipCode: customer?.Address?.zipCode,
-      city: customer?.Address?.city,
+      street: customer.Address.street,
+      number: customer.Address.number,
+      zipCode: customer.Address.zipCode,
+      city: customer.Address.city,
       active: customer.isActive(),
       rewardPoints: customer.rewardPoints,
     })
@@ -25,10 +25,10 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
     await CustomerModel.update(
       {
         name: customer.name,
-        street: customer?.Address?.street,
-        number: customer?.Address?.number,
-        zipCode: customer?.Address?.zipCode,
-        city: customer?.Address?.city,
+        street: customer.Address.street,
+        number: customer.Address.number,
+        zipCode: customer.Address.zipCode,
+        city: customer.Address.city,
         active: customer.isActive(),
         rewardPoints: customer.rewardPoints,
       },
@@ -39,11 +39,28 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
   }
 
   async find(id: string): Promise<Customer> {
-    const model = await CustomerModel.findByPk(id)
-    if (!model) {
+    let model
+    try {
+      model = await CustomerModel.findOne({
+        where: { id },
+        rejectOnEmpty: true,
+      })
+    } catch (error) {
       throw new Error('Customer not found')
     }
 
+    return this.modelToEntity(model)
+  }
+
+  async findAll(): Promise<Customer[]> {
+    const models = await CustomerModel.findAll()
+
+    return models.map((model) => {
+      return this.modelToEntity(model)
+    })
+  }
+
+  private modelToEntity(model: CustomerModel): Customer {
     const customer = new Customer(model.id, model.name)
 
     const address = new Address(
@@ -59,27 +76,5 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
     }
 
     return customer
-  }
-
-  async findAll(): Promise<Customer[]> {
-    const models = await CustomerModel.findAll()
-
-    return models.map((model) => {
-      const customer = new Customer(model.id, model.name)
-
-      const address = new Address(
-        model.street,
-        model.number,
-        model.zipCode,
-        model.city
-      )
-      customer.changeAddress(address)
-
-      if (model.active) {
-        customer.activate()
-      }
-
-      return customer
-    })
   }
 }
