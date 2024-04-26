@@ -1,5 +1,5 @@
-import CustomerModel from '@/infrastructure/db/sequelize/model/customer.model'
-import OrderItemModel from '@/infrastructure/db/sequelize/model/order_item.model'
+import OrderItemModel from '@/infrastructure/checkout/repository/sequelize/order_item.model'
+import CustomerModel from '@/infrastructure/customer/repository/sequelize/customer.model'
 import {
   BelongsTo,
   Column,
