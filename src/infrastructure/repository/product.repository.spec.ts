@@ -1,4 +1,4 @@
-import Product from '@/domain/entity/product'
+import Product from '@/domain/product/entity/product'
 import ProductModel from '@/infrastructure/db/sequelize/model/product.model'
 import ProductRepository from '@/infrastructure/repository/product.repository'
 import { Sequelize } from 'sequelize-typescript'
