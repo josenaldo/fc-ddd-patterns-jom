@@ -1,5 +1,6 @@
 import EventDispatcher from '@/domain/event/@shared/event_dispatcher'
 import SendEmailWhenProductisCreatedHandler from '@/domain/event/product/handler/send_email_when_product_is_created.handler'
+import ProductCreatedEvent from '@/domain/event/product/product_created.event'
 
 describe('Domain events tests', () => {
   it('should register event handler', () => {
@@ -83,7 +84,27 @@ describe('Domain events tests', () => {
     expect(productCreateEventHandlers).toHaveLength(0)
   })
 
-  it('should notify event handlers', () => {})
+  it('should notify all event handlers', () => {
+    // Arrange - Given
+    const eventDispatcher = new EventDispatcher()
+    const eventHandler = new SendEmailWhenProductisCreatedHandler()
+    const spyEventHandler = jest.spyOn(eventHandler, 'handle')
+    eventDispatcher.register('ProductCreatedEvent', eventHandler)
+
+    const eventData = {
+      name: 'Product 1',
+      description: 'Product 1 description',
+      price: 100,
+    }
+    const event = new ProductCreatedEvent(eventData)
+
+    // Act - When
+    eventDispatcher.notify(event)
+
+    // Assert - Then
+    expect(spyEventHandler).toHaveBeenCalledTimes(1)
+    expect(spyEventHandler).toHaveBeenCalledWith(event)
+  })
 
   it('should not notify unregistered event handlers', () => {})
 })
