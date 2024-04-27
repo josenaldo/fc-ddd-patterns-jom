@@ -5,17 +5,17 @@ import CustomerModel from '@/infrastructure/customer/repository/sequelize/custom
 
 export default class CustomerRepository implements CustomerRepositoryInterface {
   async create(customer: Customer): Promise<void> {
-    if (customer.Address === undefined) {
+    if (customer.address === undefined) {
       throw new Error('Address is mandatory to activate a customer')
     }
 
     await CustomerModel.create({
       id: customer.id,
       name: customer.name,
-      street: customer.Address.street,
-      number: customer.Address.number,
-      zipCode: customer.Address.zipCode,
-      city: customer.Address.city,
+      street: customer.address.street,
+      number: customer.address.number,
+      zipCode: customer.address.zipCode,
+      city: customer.address.city,
       active: customer.isActive(),
       rewardPoints: customer.rewardPoints,
     })
@@ -25,10 +25,10 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
     await CustomerModel.update(
       {
         name: customer.name,
-        street: customer.Address.street,
-        number: customer.Address.number,
-        zipCode: customer.Address.zipCode,
-        city: customer.Address.city,
+        street: customer.address.street,
+        number: customer.address.number,
+        zipCode: customer.address.zipCode,
+        city: customer.address.city,
         active: customer.isActive(),
         rewardPoints: customer.rewardPoints,
       },
